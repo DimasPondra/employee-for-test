@@ -27,10 +27,12 @@
         <span>Furlough Type</span>
     </a>
 
-    {{-- <a href="{{ route('admin.products.index') }}" class="sidebar-item @yield('productPage')">
+    <h5 class="sidebar-title">Manage</h5>
+
+    <a href="{{ route('admin.submission-furlough.index') }}" class="sidebar-item @yield('submissionFurloughPage')">
         <img src="{{ asset('backend/images/icons/bag-frame.svg') }}" alt="icon" width="18" height="18" class="me-3" >
-        <span>Product</span>
-    </a> --}}
+        <span>Submission Furlough</span>
+    </a>
 
     <a href="#" class="sidebar-item">
         <img src="{{ asset('backend/images/icons/log-out.svg') }}" alt="icon" width="18" height="18" class="me-3" >

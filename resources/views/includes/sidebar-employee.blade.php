@@ -17,12 +17,12 @@
         <span>Dashboard</span>
     </a>
 
-    {{-- <a href="{{ route('admin.categories.index') }}" class="sidebar-item @yield('categoryPage')">
+    <a href="{{ route('employee.submission-furlough.index') }}" class="sidebar-item @yield('submissionFurloughPage')">
         <img src="{{ asset('backend/images/icons/receipt.svg') }}" alt="icon" width="18" height="18" class="me-3" >
-        <span>Category</span>
+        <span>Submission Furlough</span>
     </a>
 
-    <a href="{{ route('admin.products.index') }}" class="sidebar-item @yield('productPage')">
+    {{-- <a href="{{ route('admin.products.index') }}" class="sidebar-item @yield('productPage')">
         <img src="{{ asset('backend/images/icons/bag-frame.svg') }}" alt="icon" width="18" height="18" class="me-3" >
         <span>Product</span>
     </a> --}}
