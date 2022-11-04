@@ -68,5 +68,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
         Route::get('/', [AdminSubmissionFurloughController::class, 'index'])->name('admin.submission-furlough.index');
         Route::get('{submissionFurlough}/show', [AdminSubmissionFurloughController::class, 'show'])->name('admin.submission-furlough.show');
         Route::post('{submissionFurlough}/approve', [AdminSubmissionFurloughController::class, 'approve'])->name('admin.submission-furlough.approve');
+
+        Route::get('export', [AdminSubmissionFurloughController::class, 'export'])->name('admin.submission-furlough.export');
     });
 });
