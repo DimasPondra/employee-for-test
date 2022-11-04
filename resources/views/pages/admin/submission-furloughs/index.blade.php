@@ -32,6 +32,30 @@
                 <h2 class="content-title mb-4">List Submission Furlough</h2>
             </div>
 
+            <form action="{{ route('admin.submission-furlough.export') }}" method="GET" class="w-100">
+                <div class="mb-4">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="form-group">
+                                <select class="form-select" name="columns[]" multiple>
+                                    <option disabled value="">Select Column</option>
+                                    <option value="name">Name</option>
+                                    <option value="start_date">Start Date</option>
+                                    <option value="last_date">Last Date</option>
+                                    <option value="furlough_type">Furlough Type</option>
+                                    <option value="employee_occupation">Occupation</option>
+                                    <option value="status">Status</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-sm btn-primary">Export Excel</button>
+                    </div>
+                </div>
+            </form>
+
             @if (session('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{ session('success') }}

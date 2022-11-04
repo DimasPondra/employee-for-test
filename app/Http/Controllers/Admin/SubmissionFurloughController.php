@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\SubmissionFurloughExport;
 use App\Http\Controllers\Controller;
 use App\Models\SubmissionFurlough;
 use App\Repositories\SubmissionFurloughRepository;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SubmissionFurloughController extends Controller
 {
@@ -64,5 +66,19 @@ class SubmissionFurloughController extends Controller
         return redirect()->route('admin.submission-furlough.show', $submissionFurlough)->with([
             'success' => 'Status submission furlough successfully updated.'
         ]);
+    }
+
+    public function export(Request $request)
+    {
+        // $columns = [];
+        // if (!empty($request->columns)) {
+        //     foreach ($request->columns as $column) {
+        //         $columns[] = array_push($columns, $column);
+        //     }
+        // }
+
+        // dd($request->columns);
+
+        return (new SubmissionFurloughExport($request->columns))->download('submission-furlough.xlsx');
     }
 }
