@@ -22,6 +22,11 @@
         <span>Occupation</span>
     </a>
 
+    <a href="{{ route('admin.furlough-types.index') }}" class="sidebar-item @yield('furloughTypePage')">
+        <img src="{{ asset('backend/images/icons/receipt.svg') }}" alt="icon" width="18" height="18" class="me-3" >
+        <span>Furlough Type</span>
+    </a>
+
     {{-- <a href="{{ route('admin.products.index') }}" class="sidebar-item @yield('productPage')">
         <img src="{{ asset('backend/images/icons/bag-frame.svg') }}" alt="icon" width="18" height="18" class="me-3" >
         <span>Product</span>
