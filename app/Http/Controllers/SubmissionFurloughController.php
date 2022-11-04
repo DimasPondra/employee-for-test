@@ -26,7 +26,6 @@ class SubmissionFurloughController extends Controller
     {
         $submissionFurloughs = $this->submissionFurloughRepository->get([
             'search' => [
-                'name' => $request->name,
                 'user_id' => auth()->user()->id
             ],
             'order' => 'DESC',

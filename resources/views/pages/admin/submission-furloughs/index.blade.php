@@ -16,14 +16,14 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-between align-items-center nav-input-container">
+        {{-- <div class="d-flex justify-content-between align-items-center nav-input-container">
             <form action="" method="GET" class="w-100">
                 <div class="nav-input-group">
                     <input type="text" name="name" value="{{ request('name') }}" class="nav-input" placeholder="Search name">
                     <button class="btn-nav-input"><img src="{{ asset('backend/images/icons/search.svg') }}" alt="icon"></button>
                 </div>
             </form>
-        </div>
+        </div> --}}
     </div>
 
     <div class="content">

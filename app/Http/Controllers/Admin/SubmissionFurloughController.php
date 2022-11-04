@@ -23,9 +23,6 @@ class SubmissionFurloughController extends Controller
     public function index(Request $request)
     {
         $submissionFurloughs = $this->submissionFurloughRepository->get([
-            'search' => [
-                'name' => $request->name
-            ],
             'order' => 'DESC',
             'paginate' => 10
         ]);
