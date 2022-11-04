@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             OccupationSeeder::class,
             UserSeeder::class,
-            ProfileSeeder::class
+            ProfileSeeder::class,
+            FurloughTypeSeeder::class,
         ]);
     }
 }
