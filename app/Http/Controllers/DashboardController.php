@@ -2,12 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\SubmissionFurloughRepository;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function index()
+    private $submissionFurloughRepository;
+
+    public function __construct(SubmissionFurloughRepository $submissionFurloughRepository)
     {
-        return view('pages.employee.dashboard');
+        $this->submissionFurloughRepository = $submissionFurloughRepository;
+    }
+
+    public function index(Request $request)
+    {
+        $submissionFurloughs = $this->submissionFurloughRepository->get([
+            'search' => [
+                'user_id' => auth()->user()->id
+            ]
+        ]);
+
+        return view('pages.employee.dashboard', [
+            'submissionFurloughs' => count($submissionFurloughs)
+        ]);
     }
 }
