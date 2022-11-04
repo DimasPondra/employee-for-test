@@ -70,14 +70,11 @@ class SubmissionFurloughController extends Controller
 
     public function export(Request $request)
     {
-        // $columns = [];
-        // if (!empty($request->columns)) {
-        //     foreach ($request->columns as $column) {
-        //         $columns[] = array_push($columns, $column);
-        //     }
-        // }
-
-        // dd($request->columns);
+        if (empty($request->columns)) {
+            return redirect()->back()->withErrors([
+                'errors' => 'Please select column before export'
+            ]);
+        }
 
         return (new SubmissionFurloughExport($request->columns))->download('submission-furlough.xlsx');
     }
